@@ -5,15 +5,15 @@ echo "Updating VM"
 sudo apt-get update
 
 # java Install Check
-dpkg -s java &> /dev/null
+dpkg -s openjdk-8-jdk &> /dev/null
 if [ $? -eq 0 ]; then
 	echo "java  already installed"
 else
 	echo "Installing java"
-	sudo apt -y install default-jdk
+	java -version
+	sudo apt -y install openjdk-8-jdk
+	export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 fi
 
-export JAVA_HOME=/usr/lib/jvm/
-export JAVA_HOME=/usr/lib/jvm/
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386
+
 
