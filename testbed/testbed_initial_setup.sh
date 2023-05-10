@@ -4,14 +4,13 @@
 echo "Updating VM"
 sudo apt-get update
 
-# mininet Install Check
+# python Install Check
 dpkg -s python &> /dev/null
 if [ $? -eq 0 ]; then
 	echo "python  already installed"
 else
 	echo "Installing python"
 	sudo apt-get -y install python
-	pip install mininet	
 fi
 
 # mininet Install Check
@@ -21,6 +20,7 @@ if [ $? -eq 0 ]; then
 else
 	echo "Installing mininet"
 	sudo apt-get -y install mininet	
+	pip install mininet
 fi
 
 # Apache2 Install Check
@@ -50,4 +50,11 @@ else
 	sudo apt-get -y install apache2-utils 
 fi
 
-
+# httperf Install Check
+dpkg -s httperf &> /dev/null
+if [ $? -eq 0 ]; then
+	echo "httperf  already installed"
+else
+	echo "Installing httperf"
+	sudo apt-get -y install httperf 
+fi
