@@ -15,5 +15,5 @@ else
 	export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 fi
 
-
+# feature:install odl-restconf odl-l2switch-switch odl-mdsal-apidoc odl-dlux-all
 
