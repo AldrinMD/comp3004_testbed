@@ -11,6 +11,16 @@ if [ $? -eq 0 ]; then
 else
 	echo "Installing python"
 	sudo apt-get -y install python
+	sudo apt-get -y install python-pip	
+fi
+
+# Git Install Check
+dpkg -s git &> /dev/null
+if [ $? -eq 0 ]; then
+	echo "git  already installed"
+else
+	echo "Installing Git"
+	sudo apt-get -y install git
 fi
 
 # mininet Install Check
@@ -21,6 +31,7 @@ else
 	echo "Installing mininet"
 	sudo apt-get -y install mininet	
 	pip install mininet
+	git clone https://github.com/mininet/mininet
 fi
 
 # Apache2 Install Check
@@ -58,3 +69,33 @@ else
 	echo "Installing httperf"
 	sudo apt-get -y install httperf 
 fi
+
+# x264 Install Check
+dpkg -s x264 &> /dev/null
+if [ $? -eq 0 ]; then
+	echo "x264  already installed"
+else
+	echo "Installing x264"
+	sudo apt-get -y install x264 
+fi
+
+# gpac Install Check
+dpkg -s gpac &> /dev/null
+if [ $? -eq 0 ]; then
+	echo "gpac  already installed"
+else
+	echo "Installing gpac"
+	sudo apt-get -y install gpac 
+fi
+
+# ffmpeg Install Check
+dpkg -s ffmpeg &> /dev/null
+if [ $? -eq 0 ]; then
+	echo "ffmpeg  already installed"
+else
+	echo "Installing ffmpeg"
+	sudo apt-get -y install ffmpeg 
+fi
+
+echo "VM IP:"
+hostname -I | awk '{print $1}'

@@ -15,5 +15,8 @@ else
 	export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 fi
 
+echo "VM IP:"
+hostname -I | awk '{print $1}'
+
 # feature:install odl-restconf odl-l2switch-switch odl-mdsal-apidoc odl-dlux-all
 
