@@ -12,11 +12,11 @@ else
 	echo "Installing java"
 	java -version
 	sudo apt -y install openjdk-8-jdk
-	export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 fi
 
 echo "VM IP:"
 hostname -I | awk '{print $1}'
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
-# feature:install odl-restconf odl-l2switch-switch odl-mdsal-apidoc odl-dlux-all
+# feature:install odl-restconf odl-l2switch-switch odl-mdsal-apidocs odl-dlux-all odl-openflowplugin-all
 
